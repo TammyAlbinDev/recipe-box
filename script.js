@@ -12,14 +12,13 @@ const statusText = document.getElementById("status");
 const recipeArea = document.getElementById("recipe");
 
 async function loadRecipe() {
-    recipeArea.textContent = "";
-
+    
     // Check for an empty recipe number
     if (input.value === "") {
         statusText.textContent = "Type a number first.";
         return;
     }
-
+    recipeArea.textContent = "";
     try {
         const url = "https://dummyjson.com/recipes/" + input.value;
 
@@ -84,7 +83,6 @@ const savedArea = document.getElementById("saved");
 
 async function addDish() {
     // Clear old success message
-    savedArea.textContent = "";
 
     // Check for an empty dish name
     if (dishInput.value === "") {
@@ -92,6 +90,8 @@ async function addDish() {
         return;
     }
 
+        savedArea.textContent = "";
+        
     try {
         // Show sending message
         postStatus.textContent = "Sending...";
